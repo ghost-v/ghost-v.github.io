@@ -15,16 +15,12 @@
 				overflow: hidden;
 			}
 
-			#ios-text{
-				display: none;
-			}
-
 			.button {
 				max-width: 10em;
 				font-size: 18px;
 				font-weight: normal;
 				text-decoration: none;
-				display: none;
+				display: block;
 				text-align: center;
 				color: #fff;
 				background-color: #5cb85c;
@@ -80,14 +76,14 @@
 	    
 	    // 安卓设备
 	    if (/android/i.test(userAgent)) {
-		document.getElementById('android').style.display = 'block';
+			document.getElementById('ios').style.display = 'none';
+			document.getElementById('ios-text').style.display = 'none';
 	        return "Android";
 	    }
 	    
 	    // iOS设备
 	    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-		document.getElementById('ios').style.display = 'block';
-		document.getElementById('ios-text').style.display = 'block';
+			document.getElementById('android').style.display = 'none';
 	        return "iOS";
 	    }
 	    
