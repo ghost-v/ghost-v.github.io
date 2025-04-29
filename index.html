@@ -57,20 +57,6 @@
 	</body>
 </html>
 <script>
-	function iosClick(){
-		document.getElementById('ios').text = '开始安装';
-		document.getElementById('ios').style['pointer-events'] = 'none';
-		window.location.href = 'itms-services://?action=download-manifest&amp;url=https://ghost-v.github.io/ios.plist';
-		setTimeout(()=>{
-			document.getElementById('ios').style['pointer-events'] = 'auto';
-			document.getElementById('ios').text = '点击安装';
-		},3000)
-	}
-	
-	function androidClick(){
-		window.location.href = 'https://ghost-v.github.io/android.apk';
-	}
-	
 	function detectOS() {
 	    var userAgent = navigator.userAgent || window.opera;
 	    
@@ -92,4 +78,20 @@
 	}
 	 
 	detectOS();
+
+	
+	function iosClick(){
+		document.getElementById('ios').text = '开始安装';
+		document.getElementById('ios').style['pointer-events'] = 'none';
+		window.location.href = 'itms-services://?action=download-manifest&amp;url=https://ghost-v.github.io/ios.plist';
+		setTimeout(()=>{
+			document.getElementById('ios').style['pointer-events'] = 'auto';
+			document.getElementById('ios').text = '点击安装';
+		},3000)
+	}
+	
+	function androidClick(){
+		window.location.href = 'https://ghost-v.github.io/android.apk';
+	}
+
 </script>
