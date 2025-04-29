@@ -14,13 +14,17 @@
 				position: relative;
 				overflow: hidden;
 			}
+			
+			#ios-text{
+				display: none;
+			}
 
 			.button {
 				max-width: 10em;
 				font-size: 18px;
 				font-weight: normal;
 				text-decoration: none;
-				display: block;
+				display: none;
 				text-align: center;
 				color: #fff;
 				background-color: #5cb85c;
@@ -59,17 +63,16 @@
 <script>
 	function detectOS() {
 	    var userAgent = navigator.userAgent || window.opera;
-	    
 	    // 安卓设备
 	    if (/android/i.test(userAgent)) {
-			document.getElementById('ios').style.display = 'none';
-			document.getElementById('ios-text').style.display = 'none';
+			document.getElementById('android').style.display = 'block';
 	        return "Android";
 	    }
 	    
 	    // iOS设备
 	    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-			document.getElementById('android').style.display = 'none';
+			document.getElementById('ios').style.display = 'block';
+			document.getElementById('ios-text').style.display = 'block';
 	        return "iOS";
 	    }
 	    
@@ -78,7 +81,6 @@
 	}
 	 
 	detectOS();
-
 	
 	function iosClick(){
 		document.getElementById('ios').text = '开始安装';
@@ -93,5 +95,6 @@
 	function androidClick(){
 		window.location.href = 'https://ghost-v.github.io/android.apk';
 	}
-
+	
+	
 </script>
