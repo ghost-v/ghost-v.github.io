@@ -67,17 +67,12 @@
 	    if (/android/i.test(userAgent)) {
 			document.getElementById('android').style.display = 'block';
 	        return "Android";
-	    }
-	    
-	    // iOS设备
-	    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+	    }else{
+			// iOS设备
 			document.getElementById('ios').style.display = 'block';
 			document.getElementById('ios-text').style.display = 'block';
-	        return "iOS";
-	    }
-	    
-	    // 其他情况
-	    return "Unknown";
+			return "iOS";
+		}
 	}
 	 
 	detectOS();
